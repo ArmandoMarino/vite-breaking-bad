@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <section id="pokemons container">
+    <section id="pokemons">
         <div class="row m-3 row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <pokemon-card v-for="pokemon in store.pokemons" :key="pokemon.id" :number="pokemon.number"
                 :name="pokemon.name" :image="pokemon.imageUrl" :type="pokemon.type1"></pokemon-card>
@@ -22,8 +22,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../../assets/scss/partials/variables' as*;
+
 #pokemons {
-    height: 100vh;
+    height: 70vh;
+    border-radius: 20px;
     overflow-y: auto;
+    background-color: $secondary-bg;
 }
 </style>

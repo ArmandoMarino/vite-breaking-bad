@@ -26,9 +26,9 @@ export default {
 @use '../../assets/scss/partials/variables' as*;
 
 .pokemon-card {
-
     .interior-card {
         background-color: white;
+        border-radius: 20px;
 
         p {
             font-style: italic;
