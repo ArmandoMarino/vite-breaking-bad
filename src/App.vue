@@ -13,10 +13,16 @@ export default {
   },
   methods: {
     fetchPokemons(url) {
+      store.isLoading = true;
       axios.get(url)
         .then(res => {
           console.log(res);
           store.pokemons = res.data.docs;
+        }).catch(error => {
+          console.error(error);
+          store.pokemons = [];
+        }).then(() => {
+          store.isLoading = flase;
         })
     }
   },
