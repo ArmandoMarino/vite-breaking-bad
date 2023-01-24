@@ -15,7 +15,8 @@ export default {
     fetchPokemons(url) {
       axios.get(url)
         .then(res => {
-          this.store.pokemons = res.data.results;
+          console.log(res);
+          store.pokemons = res.data.docs;
         })
     }
   },
