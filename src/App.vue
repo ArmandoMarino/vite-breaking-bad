@@ -22,7 +22,7 @@ export default {
           console.error(error);
           store.pokemons = [];
         }).then(() => {
-          store.isLoading = flase;
+          store.isLoading = false;
         })
     }
   },
