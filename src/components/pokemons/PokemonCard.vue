@@ -11,11 +11,14 @@ export default {
 </script>
 
 <template>
-    <div class="pokemon-card text-center p-3">
-        <img class="img-fluid mb-3" :src="image" :alt="name">
-        <p>#{{ number }}</p>
-        <p><strong>{{ name }} </strong> </p>
-        <p>{{ type }}</p>
+    <div class="col pokemon-card text-center">
+        <div class=" interior-card p-3">
+            <img class="img-fluid mb-3" :src="image" :alt="name">
+            <p>#{{ number }}</p>
+            <p><strong>{{ name }} </strong> </p>
+            <p>{{ type }}</p>
+        </div>
+
     </div>
 </template>
 
@@ -23,16 +26,18 @@ export default {
 @use '../../assets/scss/partials/variables' as*;
 
 .pokemon-card {
-    background-color: white;
-    border-radius: 50px;
 
-    p {
-        font-style: italic;
-    }
+    .interior-card {
+        background-color: white;
 
-    img {
-        width: 200px;
-        height: 200px;
+        p {
+            font-style: italic;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
     }
 }
 </style>

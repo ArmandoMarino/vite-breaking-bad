@@ -13,8 +13,8 @@ export default {
 </script>
 
 <template>
-    <section id="pokemons">
-        <div class="row mt-2 g-4 row-cols-2 row-cols-md-3 row-cols-lg-4">
+    <section id="pokemons container">
+        <div class="row m-3 row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <pokemon-card v-for="pokemon in store.pokemons" :key="pokemon.id" :number="pokemon.number"
                 :name="pokemon.name" :image="pokemon.imageUrl" :type="pokemon.type1"></pokemon-card>
         </div>
