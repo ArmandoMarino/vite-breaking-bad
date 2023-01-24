@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 #pokemons {
-    height: 0vh;
+    height: 100vh;
     overflow-y: auto;
 }
 </style>
