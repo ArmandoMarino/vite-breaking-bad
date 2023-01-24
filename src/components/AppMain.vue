@@ -1,6 +1,10 @@
 <script>
+import PokemonList from './pokemons/PokemonList.vue';
 export default {
-    name: 'AppMain'
+    name: 'AppMain',
+    components: {
+        PokemonList
+    },
 }
 </script>
 
