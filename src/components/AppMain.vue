@@ -12,10 +12,11 @@ export default {
     },
     methods: {
         onSelectedChange(selected) {
-            this.typeFilter = selected;
+            this.$emit('selected-change', selected);
         }
-    }
-}
+    },
+    emits: ['selected-change']
+};
 </script>
 
 

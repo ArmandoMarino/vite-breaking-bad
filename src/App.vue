@@ -47,20 +47,22 @@ export default {
         }).then(() => {
           store.isLoading = false;
         })
+    },
+    onSelectedChange(selected) {
+      this.typeFilter = selected;
     }
   },
   created() {
     this.fetchPokemons(this.apiUri);
   }
 };
-
 </script>
 
 <template>
   <header class="container">
     <img src="./assets/img/pk-logo.png" alt="">
   </header>
-  <app-main :pokemontypes="pokemontypes"></app-main>
+  <app-main @selected-change="onSelectedChange" :pokemontypes="pokemontypes"></app-main>
 </template>
 
 <style lang="scss">

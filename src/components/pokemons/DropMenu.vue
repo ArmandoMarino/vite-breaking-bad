@@ -3,8 +3,7 @@ export default {
     name: 'DropMenu',
     data() {
         return {
-            value: '',
-            selected: 'Ghost'
+            selected: ''
         }
     },
     props: {
