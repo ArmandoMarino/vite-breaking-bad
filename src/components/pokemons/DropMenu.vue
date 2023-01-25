@@ -10,7 +10,7 @@ export default {
     props: {
         pokemontypes: Array
     },
-    emits: ['value-change']
+    emits: ['selected-change']
 }
 </script>
 
@@ -18,7 +18,8 @@ export default {
     <div class="dropdown">
         <label for="pokemons">Choose type:</label>
         <select v-model="selected" name="pokemons" id="pokemons">
-            <option v-for="pokemontype in pokemontypes" :value="pokemontype" @click="$emit('value-change', value)">
+            <option v-for="pokemontype in pokemontypes" :value="pokemontype"
+                @click="$emit('selected-change', selected)">
                 {{ pokemontype }}</option>
         </select>
     </div>

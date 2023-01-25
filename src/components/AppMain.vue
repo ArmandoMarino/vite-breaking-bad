@@ -10,13 +10,18 @@ export default {
         PokemonList,
         DropMenu
     },
+    methods: {
+        onSelectedChange(selected) {
+            this.typeFilter = selected;
+        }
+    }
 }
 </script>
 
 
 <template>
     <main class="container">
-        <drop-menu :pokemontypes="pokemontypes"></drop-menu>
+        <drop-menu @selected-change="onSelectedChange" :pokemontypes="pokemontypes"></drop-menu>
         <pokemon-list></pokemon-list>
     </main>
 </template>

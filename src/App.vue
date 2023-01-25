@@ -36,7 +36,7 @@ export default {
   methods: {
     fetchPokemons(url) {
       store.isLoading = true;
-      // url += `?eq[type1]=${this.typeFilter}`;
+      url += `?eq[type1]=${this.typeFilter}`;
       axios.get(url)
         .then(res => {
           console.log(res);
