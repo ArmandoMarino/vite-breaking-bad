@@ -8,26 +8,49 @@ export default {
   },
   data() {
     return {
-      store
+      pokemontypes: [
+        "Ghost",
+        "Rock",
+        "Electric",
+        "Poison",
+        "Dark",
+        "Fighting",
+        "Normal",
+        "Dragon",
+        "Fire",
+        "Fairy",
+        "Steel",
+        "Ground",
+        "Water",
+        "Flying",
+        "Bug",
+        "Ice",
+        "Psychic",
+        "Grass"
+      ],
+      store,
+      pageFilter: '',
+      apiUri: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons'
     }
   },
   methods: {
     fetchPokemons(url) {
       store.isLoading = true;
-      axios.get(url)
-        .then(res => {
-          console.log(res);
-          store.pokemons = res.data.docs;
-        }).catch(error => {
-          console.error(error);
-          store.pokemons = [];
-        }).then(() => {
-          store.isLoading = false;
-        })
+      url +=
+        axios.get(url)
+          .then(res => {
+            console.log(res);
+            store.pokemons = res.data.docs;
+          }).catch(error => {
+            console.error(error);
+            store.pokemons = [];
+          }).then(() => {
+            store.isLoading = false;
+          })
     }
   },
   created() {
-    this.fetchPokemons(store.apiUri);
+    this.fetchPokemons(this.apiUri);
   }
 };
 
