@@ -29,24 +29,24 @@ export default {
         "Grass"
       ],
       store,
-      pageFilter: '',
+      typeFilter: 'Grass',
       apiUri: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons'
     }
   },
   methods: {
     fetchPokemons(url) {
       store.isLoading = true;
-      url +=
-        axios.get(url)
-          .then(res => {
-            console.log(res);
-            store.pokemons = res.data.docs;
-          }).catch(error => {
-            console.error(error);
-            store.pokemons = [];
-          }).then(() => {
-            store.isLoading = false;
-          })
+      // url += `?eq[type1]=${this.typeFilter}`;
+      axios.get(url)
+        .then(res => {
+          console.log(res);
+          store.pokemons = res.data.docs;
+        }).catch(error => {
+          console.error(error);
+          store.pokemons = [];
+        }).then(() => {
+          store.isLoading = false;
+        })
     }
   },
   created() {
