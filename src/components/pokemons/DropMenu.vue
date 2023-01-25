@@ -9,12 +9,11 @@ export default {
 
 <template>
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Pokemon Types
-        </button>
-        <ul class="dropdown-menu">
-            <li v-for="pokemontype in pokemontypes"><a class="dropdown-item" href="#"></a></li>
-        </ul>
+        <label for="cars">Choose type:</label>
+
+        <select name="cars" id="cars">
+            <option v-for="pokemontype in pokemontypes" value="volvo">{{ pokemontype }}</option>
+        </select>
     </div>
 </template>
 

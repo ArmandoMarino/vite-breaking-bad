@@ -16,7 +16,7 @@ export default {
 
 <template>
     <main class="container">
-        <drop-menu></drop-menu>
+        <drop-menu :pokemontypes="pokemontypes"></drop-menu>
         <pokemon-list></pokemon-list>
     </main>
 </template>

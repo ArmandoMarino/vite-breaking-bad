@@ -60,7 +60,7 @@ export default {
   <header class="container">
     <img src="./assets/img/pk-logo.png" alt="">
   </header>
-  <app-main></app-main>
+  <app-main :pokemontypes="pokemontypes"></app-main>
 </template>
 
 <style lang="scss">
