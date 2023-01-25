@@ -29,14 +29,14 @@ export default {
         "Grass"
       ],
       store,
-      typeFilter: 'Grass',
+      typeFilter: '',
       apiUri: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons'
     }
   },
   methods: {
     fetchPokemons(url) {
       store.isLoading = true;
-      url += `?eq[type1]=${this.typeFilter}`;
+      // url += `?eq[type1]=${this.typeFilter}`;
       axios.get(url)
         .then(res => {
           console.log(res);
