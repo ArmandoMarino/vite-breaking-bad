@@ -34,9 +34,12 @@ export default {
     }
   },
   methods: {
-    fetchPokemons(url) {
+    fetchPokemons() {
       store.isLoading = true;
-      // url += `?eq[type1]=${this.typeFilter}`;
+      let url = this.apiUri;
+
+      if (this.typeFilter) url += `?eq[type1]=${this.typeFilter}`;
+
       axios.get(url)
         .then(res => {
           console.log(res);
@@ -50,10 +53,11 @@ export default {
     },
     onSelectedChange(selected) {
       this.typeFilter = selected;
+      this.fetchPokemons()
     }
   },
   created() {
-    this.fetchPokemons(this.apiUri);
+    this.fetchPokemons();
   }
 };
 </script>

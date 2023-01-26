@@ -2,7 +2,7 @@
 export default {
     name: 'PokemonCard',
     props: {
-        number: String,
+        number: Number,
         name: String,
         image: String,
         type: String,

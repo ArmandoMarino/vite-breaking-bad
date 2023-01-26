@@ -22,7 +22,7 @@ export default {
 
 <template>
     <main class="container">
-        <drop-menu @selected-change="onSelectedChange" :pokemontypes="pokemontypes"></drop-menu>
+        <drop-menu @selected-change="onSelectedChange" :options="pokemontypes"></drop-menu>
         <pokemon-list></pokemon-list>
     </main>
 </template>

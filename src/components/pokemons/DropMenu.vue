@@ -7,7 +7,7 @@ export default {
         }
     },
     props: {
-        pokemontypes: Array
+        options: Array
     },
     emits: ['selected-change']
 }
@@ -15,10 +15,10 @@ export default {
 
 <template>
     <div class="dropdown">
-        <label for="pokemons">Choose type:</label>
-        <select v-model="selected" name="pokemons" id="pokemons" @click="$emit('selected-change', selected)">
+        <label for="options">Choose type:</label>
+        <select v-model="selected" name="options" id="options" @click="$emit('selected-change', selected)">
             <option value="">---</option>
-            <option v-for="pokemontype in pokemontypes" :value="pokemontype">{{ pokemontype }}</option>
+            <option v-for="option in options" :value="option">{{ option }}</option>
         </select>
     </div>
 </template>
