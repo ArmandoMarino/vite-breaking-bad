@@ -16,9 +16,8 @@ export default {
 <template>
     <div class="dropdown">
         <label for="pokemons">Choose type:</label>
-        <select v-model="selected" name="pokemons" id="pokemons">
-            <option v-for="pokemontype in pokemontypes" :value="pokemontype"
-                @click="$emit('selected-change', selected)">
+        <select v-model="selected" name="pokemons" id="pokemons" @click="$emit('selected-change', selected)">
+            <option v-for="pokemontype in pokemontypes" :value="pokemontype">
                 {{ pokemontype }}</option>
         </select>
     </div>
